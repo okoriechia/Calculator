@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./day4.js"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin-left: 20px;
+        }
+
+        .container {
+            border: 1px solid gray;
+            background-color: rgb(11, 10, 10);
+            width: 350px;
+            height: 550px;
+            border-radius: 9px;
+            box-shadow: 5px 5px 5px rgb(205, 205, 205);
+
+        }
+
+        .containernav {
+            display: flex;
+
+
+        }
+
+        .numbers {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .word {
+            color: #fff;
+            margin-top: 9px;
+            margin-left: 15px;
+        }
+
+        #minimize {
+            color: #fff;
+            margin-left: 70px;
+            font-size: 20px;
+            margin-top: 3px;
+
+        }
+
+        #box {
+            color: #fff;
+            font-size: 17px;
+            margin-top: 9px;
+            margin-left: 50px;
+
+        }
+
+        .close {
+            position: absolute;
+            background-color: transparent;
+            color: #fff;
+            border: none;
+            margin-left: 300px;
+            margin-top: 0px;
+        }
+
+        #end {
+            font-size: 17px;
+        }
+
+        .headingnav {
+            display: flex;
+        }
+
+        #menu {
+            color: #fff;
+            font-size: 27px;
+            margin-top: 17px;
+            margin-left: 18px;
+        }
+
+        .standard {
+            color: #fff;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        #history {
+            color: #fff;
+            margin-left: 170px;
+            margin-top: 20px;
+        }
+
+        #inpt2 {
+            height: 90px;
+            width: 348px;
+            margin-top: 15px;
+            background-color: rgb(11, 10, 10);
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 50px;
+            text-align: right;
+        }
+
+        #inpt {
+            width: 350px;
+            height: 30px;
+            border: none;
+            outline: none;
+            background-color: rgb(11, 10, 10);
+            color: #fff;
+            text-align: right;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .click {
+            color: #fff;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .item {
+            display: flex;
+            margin-top: 10px;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 43vh;
+            margin-left: 5px;
+
+        }
+
+        button:hover {
+            background-color: rgb(73, 73, 77);
+        }
+
+        button {
+            height: 50px;
+            width: 85px;
+            border-radius: 5px;
+            background-color: rgb(50, 50, 50);
+            color: #fff;
+
+        }
+
+        .equal {
+            background-color: rgb(206, 105, 32);
+        }
+
+        .root {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="containernav">
+            <img class="numbers" src="../icons8-calculator-48.png" alt="" width="20px">
+            <p class="word">Calculator</p>
+            <span id="minimize" class="material-symbols-outlined">
+                minimize
+            </span>
+            </span>
+            <span id="box" class="material-symbols-outlined">
+                check_box_outline_blank
+            </span>
+            <button class="close"><span id="end" class="material-symbols-outlined"> close</span></button>
+        </div>
+        <div class="headingnav">
+            <span id="menu" class="material-symbols-outlined">
+                menu
+            </span>
+            <h3 class="standard">Standard</h3>
+            <span id="history" class="material-symbols-outlined">
+                history
+            </span>
+        </div>
+        <div class="headingnav2">
+            <input id="inpt" type="">
+        </div>
+        <div><input type="" name="" id="inpt2"></div>
+        <div class="click">
+            <p>MC</p>
+            <p>MR</p>
+            <p>M+</p>
+            <p>M-</p>
+            <p>MS</p>
+            <p>M</p>
+        </div>
+        <div class="item">
+            <button onclick="percentage()">%</button>
+            <button onclick="clear1 ()">CE</button>
+            <button onclick="clear2 ()">C</button>
+            <button onclick="backspace()">X</button>
+            <button>1/x</button>
+            <button onclick="reverse()">2^x</button>
+            <button>2^2<img class="" src="../icons8-square-root-48.png" alt="" width="20px"></button>
+            <button onclick="sign('/')">\\</button>
+            <button onclick="view (7)">7</button>
+            <button onclick="view (8)">8</button>
+            <button onclick="view (9)">9</button>
+            <button onclick="sign ('*')">x</button>
+            <button onclick="view (4)">4</button>
+            <button onclick="view(5)">5</button>
+            <button onclick="view (6)">6</button>
+            <button onclick="sign ('-')">-</button>
+            <button onclick="view (1)">1</button>
+            <button onclick="view (2)">2</button>
+            <button onclick="view (3)">3</button>
+            <button onclick="sign ('+')">+</button>
+            <button onclick="sign ('+/_')">+/_</button>
+            <button onclick="view (0)">0</button>
+            <button onclick="view ()">.</button>
+            <button class="equal" onclick="equals ('=')">=</button>
+
+
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
+
+<script>
+    let element1 = document.getElementById('inpt')
+    let element2 = document.getElementById('inpt2')
+    let shouldclear = false
+    let Firstvalue, operator = ''
+    function view(digit) {
+        element2.value += (`${digit}`)
+        if (shouldclear == true) {
+            element2.value = ''
+            element2.value += (digit)
+            shouldclear = false
+
+        }
+    }
+    function sign(act) {
+        shouldclear = true
+        operator = act
+        element1.value = element2.value + act
+        Firstvalue = element2.value
+    }
+    function equals() {
+        element1.value = Firstvalue + operator + element2.value
+
+
+        if (operator == '-') {
+            element2.value = Firstvalue - element2.value
+        }
+
+
+        if (operator == '+') {
+            element1.value = Number(Firstvalue) + Number(element2.value)
+        }
+        if (operator == '*') {
+            element1.value = Number(Firstvalue) * Number(element2.value)
+        }
+        if (operator == '/') {
+            element2.value = Number(Firstvalue) / Number(element2.value)
+        }
+
+        if (operator =='x'){
+            element2.value = Number(Firstvalue) * Number(element2.value)
+        }
+    }
+    function percentage(){
+       
+        percent= (element2.value/100)
+        element1= Firstvalue + 'x' + (element2.value/100)
+        element2.value =percent
+        
+    }
+
+    function backspace() {
+        let value = document.getElementById('inpt2').value
+        element2.value = value.slice(0, -1);
+    }
+    function clear1() {
+        let value = document.getElementById('inpt2').value
+    
+    }
+    function clear2() {
+        let value = document.getElementById('inpt2').value
+    }
+
+</script>
